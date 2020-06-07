@@ -1,0 +1,68 @@
+// Variables
+
+$brand-main:    #ff58ff
+$brand-light:   #ffffff
+$brand-fast:    #3000b4
+$brand-dark:    #000000
+$brand-default: #dddddd
+
+// Mixins
+
+=thumbnail($width, $height, $padding, $bg, $br, $color)
+    width:                  $width
+    height:                 $height
+    padding:                $padding
+    background:             $bg
+    -webkit-border-radius:  $br
+    -moz-border-radius:     $br
+    -ms-border-radius:      $br
+    border-radius:          $br
+    color:                  $color
+    text-align:             center
+
+=btn($padding, $bg, $br, $color)
+    padding:                $padding
+    background:             $bg
+    -webkit-border-radius:  $br
+    -moz-border-radius:     $br
+    -ms-border-radius:      $br
+    border-radius:          $br
+    color:                  $color
+    display:                block
+    margin:                 10px auto
+    clear:                  both
+    &:hover
+        background: lighten($bg, 10%)
+
+// Styles
+
+body
+    background-color: $brand-default
+
+article
+    background-color:   $brand-main
+    color:              $brand-dark
+    width:              800px
+    height:             auto
+    margin:             auto
+    padding:            20px
+    border-radius:      3px
+    position:           relative
+    z-index:            -2
+
+.thumbnailWhatsUp 
+    +thumbnail(100px, auto, 10px, $brand-dark, 5px, $brand-light)
+    margin: 0 430px -40px
+    
+.thumbnailCircle
+    +thumbnail(100px, 100px, 0, $brand-main, 50%, $brand-dark)
+    float: right
+    margin: -45px 470px 0 0
+
+.btn-touch
+    +btn(10px, $brand-fast, 5px, $brand-light)
+
+.btn-sassy
+    +btn(10px, $brand-dark, 50%, $brand-light)
+    width: 200px
+    height: 100px
